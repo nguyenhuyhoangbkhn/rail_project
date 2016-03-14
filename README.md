@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
      ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
     '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
@@ -25,7 +26,5 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 
 ## member 
 20121746    Nguyen Huy Hoang
-20121607    Nguyen Xuan Giap
-20121877    Tu Manh Hung
-20122505    Dang Viet Thinh
-20101071    Cu Tuan Anh
+
+
