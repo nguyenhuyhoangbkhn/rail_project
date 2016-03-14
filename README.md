@@ -31,6 +31,7 @@ To watch some training videos, visit http://www.youtube.com/user/c9ide
 =======
 
 ## member 
-20121746    Nguyen Huy Hoang
-20122505    Dang Viet Thinh
+- 20121746    Nguyen Huy Hoang
+- 20122505    Dang Viet Thinh
+- 20121607    Nguyen Xuan Giap
 
