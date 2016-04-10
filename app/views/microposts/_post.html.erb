@@ -1,0 +1,18 @@
+<div class="well">
+	<p class="title"><%= link_to @post.title,  @post %></p>
+	<i><span class="timestamp">
+		<%= link_to @post.user.name, @post.user %> posted <%= time_ago_in_words(@post.created_at) %> ago
+	</span></i>
+	<br>
+	<%= image_tag(@post.picture.url,:width => "400", :height => "auto")  if @post.picture? %>
+	<p><%= @post.content.truncate(300) %></p>
+	  <% if current_user?(@post.user) %>
+	  	<i style="float: left">
+	  		<%= link_to "Edit", edit_micropost_path(@post),:title =>"Edit",:class => "glyphicon glyphicon-pencil" %>
+	  		&nbsp;
+        	<%= link_to "Delete", @post, method: :delete,
+                                         data: { confirm: "You sure?" }, :title =>"Delete", :class => "glyphicon glyphicon-trash", :style=>'color: red' %>
+	  	</i>
+	  <% end %>
+	<i style="float: right"><%= link_to "Read more",  @post %></i>
+</div>

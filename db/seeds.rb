@@ -5,31 +5,33 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create!(name:  "ennino",
-             email: "ennino@gmail.com",
-             password:              "123456",
-             password_confirmation: "123456",
-             admin: true,
+User.create!(name:  "VietBui",
+             email: "buiquocviet_vbhp@yahoo.com",
+             password:              "12345678",
+             password_confirmation: "12345678",
+             admin:     true,
              activated: true,
              activated_at: Time.zone.now)
 
-
-19.times do |n|
+99.times do |n|
   name  = Faker::Name.name
-  email = "ennino#{n+1}@gmail.com"
-  password = "123456"
+  email = "example-#{n+1}@railstutorial.org"
+  password = "password"
   User.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password,
-               activated: true,
-               activated_at: Time.zone.now)
+              email: email,
+              password:              password,
+              password_confirmation: password,
+              activated: true,
+              activated_at: Time.zone.now)
 end
+
 users = User.order(:created_at).take(6)
-19.times do
+50.times do
+  title = Faker::Lorem.sentence(1)  
   content = Faker::Lorem.sentence(5)
-  users.each { |user| user.microposts.create!(content: content) }
+  users.each { |user| user.microposts.create!(content: content, title: title) }
 end
+
 # Following relationships
 users = User.all
 user  = users.first
