@@ -15,3 +15,14 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+ 
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.carousel').carousel({
+        interval: 10000
+    });
+
+    $('.carousel').carousel('cycle');
+});
+</script>  
+

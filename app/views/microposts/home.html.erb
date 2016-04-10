@@ -1,8 +1,41 @@
 <% provide(:title, 'Entries') %>
-<h1>Entries</h1>
-<%= will_paginate @posts %>
+<% if logged_in? %>
+<h1>Recent Post</h1>
 <% @posts.each do |post| %>
 	<% @post = post %>
 	  <%= render "microposts/post" %>
 <% end %>
 <%= will_paginate @posts %>
+<% else %>
+	<div id="HomePageCarousel" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag("homepage/1.jpg",:width => "100%", :height => "auto")%>
+    </div>
+    <div class="item">
+      <%= image_tag("homepage/2.jpg",:width => "100%", :height => "auto")%>
+    </div>
+    <div class="item">
+      <%= image_tag("homepage/3.jpg",:width => "100%", :height => "auto")%>
+    </div>
+    <div class="item">
+      <%= image_tag("homepage/4.jpg",:width => "100%", :height => "auto")%>
+    </div>
+    <div class="item">
+      <%= image_tag("homepage/5.jpg",:width => "100%", :height => "auto")%>
+    </div>
+    <a class="left carousel-control" href="#HomePageCarousel" role="button" data-slide="prev">
+    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    	<span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#HomePageCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+	</a>   
+  </div>
+  <br><br><br>
+  <div class="signup">
+	<div class="signup_button"><a><%= link_to "Sign Up Now!", signup_path %></a></div>
+  </div>
+</div>
+<% end %>

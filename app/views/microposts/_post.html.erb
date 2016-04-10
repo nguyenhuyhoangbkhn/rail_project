@@ -3,6 +3,8 @@
 	<i><span class="timestamp">
 		<%= link_to @post.user.name, @post.user %> posted <%= time_ago_in_words(@post.created_at) %> ago
 	</span></i>
+	<br>
+	<%= image_tag(@post.picture.url,:width => "400", :height => "auto")  if @post.picture? %>
 	<p><%= @post.content.truncate(300) %></p>
 	  <% if current_user?(@post.user) %>
 	  	<i style="float: left">
